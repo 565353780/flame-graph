@@ -2,8 +2,6 @@
 
 PID=$(pgrep ${1})
 
-echo ${PID}
-
 if [ -z "${PID}" ]; then
 	echo '[ERROR][track.sh]'
 	echo '\t input process not exist!'
