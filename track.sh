@@ -15,7 +15,7 @@ rm -rf ${1}
 mkdir ${1}
 cd ${1}
 
-perf record -F 99 -p $PID -g -o perf-in-fb.data -- sleep 60
+perf record -F 998 -p $PID -g -o perf-in-fb.data -- sleep 60
 perf script -i perf-in-fb.data >perf.unfold
 ../../../FlameGraph/stackcollapse-perf.pl perf.unfold >perf.folded
 ../../../FlameGraph/flamegraph.pl perf.folded >perf.svg
